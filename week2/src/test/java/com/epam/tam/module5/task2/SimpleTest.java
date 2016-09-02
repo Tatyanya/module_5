@@ -1,8 +1,8 @@
 package com.epam.tam.module5.task2;
 
-import com.epam.tam.module5.task2.ui.pages.OnePassPage;
-import com.epam.tam.module5.task2.ui.pages.TR.TRAllProductPage;
-import com.epam.tam.module5.task2.ui.pages.TR.TRHomePage;
+import com.epam.tam.module5.task2.pages.OnePassPage;
+import com.epam.tam.module5.task2.pages.TR.TRAllProductPage;
+import com.epam.tam.module5.task2.pages.TR.TRHomePage;
 import com.epam.tam.module5.task2.util.Constants;
 
 import com.epam.tam.module5.task2.util.TestProperties;
@@ -78,7 +78,7 @@ public class SimpleTest extends BaseTest {
         driver.navigate().to(URL);
         loginPage.openSignInPage();
         allProductPage.openResourceLink("Westlaw Classic");
-        onePassPage.loginOnePass(USERNAME, PASSWORD);
+        onePassPage.loginOnePass(user.getUsername(), user.getPassword());
         assertTrue(onePassPage.getErrorMessage().equalsIgnoreCase(Constants.ALERT_MESSAGE), "Error message is not the same");
     }
 
