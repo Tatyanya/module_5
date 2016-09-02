@@ -17,6 +17,8 @@ public class BaseTest {
     protected WebDriver driver;
     protected User user;
     protected String URL;
+    protected String USERNAME;
+    protected String PASSWORD;
 
     @BeforeSuite(alwaysRun = true, description = "")
     public void initTestProperties() {
@@ -24,6 +26,8 @@ public class BaseTest {
         user = new User();
         user.setUsername(testProperties.getUserName());
         user.setPassword(testProperties.getUserPassword());
+        USERNAME = user.getUsername();
+        PASSWORD = user.getPassword();
         URL = testProperties.getURL();
     }
 

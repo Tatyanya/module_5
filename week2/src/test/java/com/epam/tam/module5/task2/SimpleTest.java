@@ -20,8 +20,6 @@ public class SimpleTest extends BaseTest {
     TRHomePage loginPage;
     TRAllProductPage allProductPage;
     OnePassPage onePassPage;
-    protected String USERNAME;
-    protected String PASSWORD;
     protected static TestProperties testProperties;
 
     @BeforeTest
@@ -78,7 +76,7 @@ public class SimpleTest extends BaseTest {
         driver.navigate().to(URL);
         loginPage.openSignInPage();
         allProductPage.openResourceLink("Westlaw Classic");
-        onePassPage.loginOnePass(user.getUsername(), user.getPassword());
+        onePassPage.loginOnePass(USERNAME, PASSWORD);
         assertTrue(onePassPage.getErrorMessage().equalsIgnoreCase(Constants.ALERT_MESSAGE), "Error message is not the same");
     }
 
